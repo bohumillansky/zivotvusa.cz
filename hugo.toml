@@ -1,0 +1,106 @@
+# hugo.toml - hlavní konfigurace
+baseURL = "https://github.com/lucienblackwell/zivotvusa.cz"
+languageCode = "cs-CZ"
+title = "Život v USA - Blog o stěhování z Česka do Ameriky"
+theme = "zivotvusa"
+
+# Pagination
+paginate = 6
+paginatePath = "page"
+
+# Nastavení pro SEO
+enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = true
+
+# Markup nastavení
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    codeFences = true
+
+# Menu struktura
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Domů"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "o-mne"
+    name = "O mně"
+    url = "/o-mne/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "finance"
+    name = "Finance"
+    url = "/kategorie/finance/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "porovnani"
+    name = "Porovnání ČR vs USA"
+    url = "/kategorie/porovnani/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "zivot"
+    name = "Život v USA"
+    url = "/kategorie/zivot/"
+    weight = 5
+
+# Parametry webu
+[params]
+  author = "Bohumil Lansky"
+  description = "Osobní zkušenosti s životem v USA. Finance, porovnání s Českem, praktické rady pro ty, kdo uvažují o stěhování."
+  keywords = ["život v USA", "stěhování", "finance", "Česko", "Amerika", "expat"]
+  
+  # SEO
+  images = ["/images/og-image.jpg"]
+  
+  # Social
+  twitter = "@your_twitter"
+  email = "kontakt@zivotvusa.cz"
+  
+  # Analytics (přidat později)
+  # googleAnalytics = "G-MEASUREMENT_ID"
+  
+  # AdSense (přidat v další iteraci)
+  # adsenseId = "ca-pub-YOUR_ID"
+  
+  # Nastavení pro blog
+  dateFormat = "2. ledna 2006"
+  showReadingTime = true
+  showWordCount = true
+  showShareButtons = true
+  
+  # Hlavní stránka
+  mainPagePostCount = 6
+  
+# Taxonomies (kategorie a tagy)
+[taxonomies]
+  category = "kategorie"
+  tag = "tagy"
+
+# Privacy nastavení
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# Výstupy pro RSS a další
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+
+# Multilingual podpora (pro případné rozšíření)
+[languages]
+  [languages.cs]
+    weight = 1
+    languageName = "Čeština"

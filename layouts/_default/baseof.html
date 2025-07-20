@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+    <!-- SEO meta tagy -->
+    <meta name="description"
+        content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="keywords" content="{{ delimit .Site.Params.keywords "
+        , " }}{{ if .Params.tags }}, {{ delimit .Params.tags " , " }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+    <meta property="og:description"
+        content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ absURL " images/og-image.jpg" }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+    <meta name="twitter:description"
+        content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ absURL " images/og-image.jpg" }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- CSS -->
+    {{ $css := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+
+    <!-- RSS -->
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `
+    <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+    <!-- Structured Data -->
+    {{ if .IsPage }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ .Title }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Params.author }}"
+        },
+        "datePublished": "{{ .Date.Format "2006-01-02" }}",
+        "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+        "description": "{{ .Description }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ .Permalink }}"
+        }
+    }
+    </script>
+    {{ end }}
+</head>
+
+<body>
+    {{ partial "header.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- JavaScript -->
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+</body>
+
+</html>

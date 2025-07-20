@@ -1,0 +1,40 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>{{ .Site.Title }}</h4>
+                <p>{{ .Site.Params.description }}</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Kategorie</h4>
+                <ul>
+                    {{ range .Site.Taxonomies.kategorie }}
+                    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <ul>
+                    <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+                    {{ if .Site.Params.twitter }}
+                    <li><a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">Twitter</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>RSS</h4>
+                <ul>
+                    <li><a href="{{ .Site.RSSLink }}">RSS Feed</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}. Všechna práva vyhrazena.</p>
+        </div>
+    </div>
+</footer>
