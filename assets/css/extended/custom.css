@@ -1,0 +1,19 @@
+/* Hlavní logo s ikonou */
+.header .logo a {
+    font-size: 1.4em !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Přidáme podtitul */
+.header .logo::after {
+    content: "Americké zkušenosti očima Čecha";
+    display: block;
+    font-size: 0.7em;
+    font-weight: 300;
+    color: var(--secondary);
+    margin-top: 2px;
+}

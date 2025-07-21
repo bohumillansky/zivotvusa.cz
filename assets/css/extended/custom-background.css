@@ -1,0 +1,42 @@
+:root {
+    --cz-blue: #11457E;
+    --cz-red: #D7141A;
+    --usa-blue: #3C3B6E;
+    --usa-red: #B22234;
+    --white: #FFFFFF;
+}
+
+/* Pozadí s MNOHEM VÍCE CHAOTICKÝCH ČAR */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Prvni chaotická vrstva --%3E%3Cpath d='M0,234 Q234,123 456,289 T789,234' stroke='%2311457E' stroke-width='3' fill='none'/%3E%3Cpath d='M1420,45 Q1598,234 1789,123 L1856,456' stroke='%23D7141A' stroke-width='3.5' fill='none' stroke-dasharray='8,4'/%3E%3Cpath d='M234,890 C345,789 456,912 589,845 Q712,923 834,867' stroke='%23FFFFFF' stroke-width='2.5' fill='none' stroke-dasharray='3,3'/%3E%3Cpath d='M1234,567 L1345,678 L1123,789 Q1234,912 1378,834' stroke='%23D7141A' stroke-width='2' fill='none'/%3E%3Cpath d='M89,412 Q267,523 445,389 C567,345 689,456 812,378' stroke='%2311457E' stroke-width='2' fill='none' stroke-dasharray='2,4'/%3E%3Cpath d='M1678,456 L1789,589 L1634,623 Q1745,756 1867,678' stroke='%23FFFFFF' stroke-width='2.5' fill='none' stroke-dasharray='4,2'/%3E%3Cpath d='M789,123 Q912,345 1045,234 T1289,345' stroke='%233C3B6E' stroke-width='3.5' fill='none'/%3E%3Cpath d='M123,567 C234,456 345,589 478,523 L612,678' stroke='%23B22234' stroke-width='3' fill='none' stroke-dasharray='5,5'/%3E%3Cpath d='M1567,789 Q1678,912 1812,823 C1912,756 1834,623 1912,534' stroke='%23FFFFFF' stroke-width='2.5' fill='none' stroke-dasharray='10,3'/%3E%3Cpath d='M567,45 L678,156 L589,267 Q712,389 845,312' stroke='%23B22234' stroke-width='3' fill='none'/%3E%3C!-- Druha super chaotická vrstva --%3E%3Cpath d='M156,45 Q289,167 423,89 L567,234 Q689,345 812,267' stroke='%23FFFFFF' stroke-width='2' fill='none' stroke-dasharray='5,3'/%3E%3Cpath d='M912,456 C1023,389 1134,478 1223,412 L1345,567 L1234,678' stroke='%23D7141A' stroke-width='3' fill='none' stroke-dasharray='3,5'/%3E%3Cpath d='M1456,912 Q1589,989 1712,934 T1867,1023' stroke='%233C3B6E' stroke-width='2' fill='none'/%3E%3Cpath d='M345,678 L456,734 L389,812 Q512,923 645,845' stroke='%23FFFFFF' stroke-width='2.5' fill='none' stroke-dasharray='7,3'/%3E%3Cpath d='M45,789 C156,712 267,834 378,756 Q489,823 612,767' stroke='%2311457E' stroke-width='2.5' fill='none'/%3E%3Cpath d='M1345,123 Q1478,245 1612,178 C1734,123 1856,234 1912,156' stroke='%23D7141A' stroke-width='2' fill='none' stroke-dasharray='4,4'/%3E%3Cpath d='M712,234 L823,345 L734,456 L845,567' stroke='%23FFFFFF' stroke-width='2.5' fill='none'/%3E%3Cpath d='M234,345 Q367,467 512,389 T756,478' stroke='%23B22234' stroke-width='3' fill='none' stroke-dasharray='8,2'/%3E%3C!-- Treti mega chaotická vrstva --%3E%3Cpath d='M0,678 Q478,456 912,723 L1123,567 Q1345,789 1567,623' stroke='%23FFFFFF' stroke-width='4' fill='none' opacity='0.7'/%3E%3Cpath d='M1234,0 C1456,234 1234,567 1567,812 Q1789,923 1912,845' stroke='%23B22234' stroke-width='4' fill='none' stroke-dasharray='12,6' opacity='0.6'/%3E%3Cpath d='M567,1080 Q912,812 1223,989 L1456,823' stroke='%233C3B6E' stroke-width='3.5' fill='none' opacity='0.7'/%3E%3Cpath d='M89,156 L234,267 L123,378 Q245,489 378,412' stroke='%23FFFFFF' stroke-width='2' fill='none'/%3E%3Cpath d='M1789,345 Q1856,478 1912,412 L1834,567 L1912,678' stroke='%2311457E' stroke-width='2.5' fill='none' stroke-dasharray='3,3'/%3E%3Cpath d='M456,567 C589,489 712,589 845,534 Q967,612 1089,556' stroke='%23B22234' stroke-width='2.5' fill='none'/%3E%3Cpath d='M1045,89 Q1189,212 1323,134 T1567,223' stroke='%23FFFFFF' stroke-width='3' fill='none' stroke-dasharray='5,5'/%3E%3C!-- Ctvrta vrstva - zig zag chaos --%3E%3Cpath d='M312,189 Q423,267 534,223 L645,345 L567,456 L689,567' stroke='%2311457E' stroke-width='1.5' fill='none'/%3E%3Cpath d='M1523,623 L1612,712 L1545,789 L1656,867 L1589,945' stroke='%23FFFFFF' stroke-width='1.5' fill='none' stroke-dasharray='2,2'/%3E%3Cpath d='M178,912 C289,845 412,923 523,867 Q634,934 756,878' stroke='%233C3B6E' stroke-width='2' fill='none'/%3E%3Cpath d='M867,345 Q978,423 1089,378 L1212,489 Q1334,567 1456,512' stroke='%23B22234' stroke-width='2' fill='none' stroke-dasharray='4,3'/%3E%3Cpath d='M623,156 L734,234 L645,312 L756,389 L678,467' stroke='%23FFFFFF' stroke-width='2' fill='none'/%3E%3Cpath d='M1412,478 Q1534,567 1656,512 C1778,456 1889,567 1912,489' stroke='%23D7141A' stroke-width='2.5' fill='none'/%3E%3Cpath d='M89,623 C212,567 334,634 456,589 L578,712 L489,823' stroke='%233C3B6E' stroke-width='2' fill='none' stroke-dasharray='6,2'/%3E%3Cpath d='M789,789 L912,867 L823,945 Q945,1023 1078,967' stroke='%23FFFFFF' stroke-width='1.5' fill='none'/%3E%3C!-- Pata vrstva - obrovske vlny --%3E%3Cpath d='M0,89 Q567,456 1123,234 L1567,567 Q1789,345 1920,623' stroke='%2311457E' stroke-width='5' fill='none' opacity='0.5'/%3E%3Cpath d='M1920,234 C1678,567 1456,234 1234,678 Q1012,456 789,789' stroke='%23FFFFFF' stroke-width='4.5' fill='none' stroke-dasharray='15,5' opacity='0.5'/%3E%3Cpath d='M456,1080 Q912,678 1456,912 L1789,678' stroke='%233C3B6E' stroke-width='4' fill='none' opacity='0.6'/%3E%3Cpath d='M1789,1080 C1567,812 1789,456 1523,234 Q1234,123 945,345' stroke='%23D7141A' stroke-width='3.5' fill='none' stroke-dasharray='10,5' opacity='0.5'/%3E%3C!-- Sesta vrstva - extra chaos --%3E%3Cpath d='M0,456 L234,567 L123,678 L345,789 L234,890' stroke='%23FFFFFF' stroke-width='2.5' fill='none'/%3E%3Cpath d='M1920,678 Q1745,567 1567,712 L1389,567 L1567,456' stroke='%23D7141A' stroke-width='3' fill='none' stroke-dasharray='6,3'/%3E%3Cpath d='M678,0 C789,123 678,345 812,456 L945,345 L1078,489' stroke='%23FFFFFF' stroke-width='2.5' fill='none'/%3E%3Cpath d='M345,234 Q489,345 623,289 L756,412 Q889,534 1023,456' stroke='%23B22234' stroke-width='2' fill='none' stroke-dasharray='5,2'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-position: 0 0;
+}
+
+
+article {
+    position: relative;
+    background-color: rgba(255, 255, 255);
+    /* Stejná šedá jako pozadí */
+    z-index: 1;
+    max-width: calc(100% - 40px);
+    /* Menší šířka */
+    border-radius: var(--radius);
+}
+
+main {
+    padding: var(--gap)
+}
+
+body.dark article.post-single {
+    background-color: rgba(29, 30, 32);
+}

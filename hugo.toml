@@ -1,0 +1,61 @@
+baseURL = 'https://zivotvusa.cz/'
+languageCode = 'cs'
+title = 'Život v USA - Americké zkušenosti očima Čecha'
+theme = 'PaperMod'
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  title = 'Život v USA - Americké zkušenosti očima Čecha'
+  description = 'Osobní blog o životě v USA očima českého expata. Finanční srovnání, práce, bydlení a každodenní život v Americe vs Česko. Dlouhodobé zkušenosti z první ruky.'
+  keywords = ['život v usa', 'český expat', 'amerika vs česko', 'práce v usa', 'finance usa']
+  author = 'Bohumil Lánský'
+
+  # Zobrazování článků (Regular Mode je výchozí)
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = false
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  
+  disableSpecial1stPost = true
+
+[params.label]
+  text = "Život v USA"
+
+# Výstupy pro vyhledávání
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Vyhledávání
+[params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1000
+  threshold = 0.4
+
+# Menu
+[[menu.main]]   
+  name = "Blog"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Kategorie"
+  url = "/categories/"
+  weight = 20
+
+[[menu.main]]
+  name = "Tagy"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  name = "Hledat"
+  url = "/search/"
+  weight = 40
