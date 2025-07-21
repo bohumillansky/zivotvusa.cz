@@ -43,20 +43,15 @@ body.dark article.post-single {
         0 0 0 21px rgba(29, 30, 32, 0.5);
 }
 
-/* Pro náhledy článků na hlavní stránce zachováme původní vzhled */
+/* Pro náhledy článků na hlavní stránce - pouze barvy pozadí */
 article.post-entry {
     background-color: rgba(255, 255, 255);
-    border: none !important;
-    /* Odstraní šedý okraj */
-    box-shadow: none !important;
-    /* Ujistíme se, že není žádný stín */
+    /* Zachováme výchozí border a box-shadow z PaperMod */
 }
 
 body.dark article.post-entry {
     background-color: rgba(40, 42, 46);
     /* Světlejší šedá než pozadí (29, 30, 32) */
-    border: none !important;
-    box-shadow: none !important;
 }
 
 /* Zachování původního paddingu pro main */
