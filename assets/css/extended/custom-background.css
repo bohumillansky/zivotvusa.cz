@@ -22,21 +22,61 @@ body::before {
     background-position: 0 0;
 }
 
-
+/* Místo omezování šířky článku vytvoříme okraj pomocí pseudo-elementu */
 article {
     position: relative;
     background-color: rgba(255, 255, 255);
-    /* Stejná šedá jako pozadí */
     z-index: 1;
-    max-width: calc(100% - 40px);
-    /* Menší šířka */
+    /* Odstraněna max-width */
     border-radius: var(--radius);
 }
 
-main {
-    padding: var(--gap)
+/* Box-shadow POUZE pro detail článku (post-single) */
+article.post-single {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255),
+        0 0 0 21px rgba(255, 255, 255, 0.5);
 }
 
 body.dark article.post-single {
     background-color: rgba(29, 30, 32);
+    box-shadow: 0 0 0 20px rgba(29, 30, 32),
+        0 0 0 21px rgba(29, 30, 32, 0.5);
+}
+
+/* Pro náhledy článků na hlavní stránce zachováme původní vzhled */
+article.post-entry {
+    background-color: rgba(255, 255, 255);
+    border: none !important;
+    /* Odstraní šedý okraj */
+    box-shadow: none !important;
+    /* Ujistíme se, že není žádný stín */
+}
+
+body.dark article.post-entry {
+    background-color: rgba(40, 42, 46);
+    /* Světlejší šedá než pozadí (29, 30, 32) */
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Zachování původního paddingu pro main */
+main {
+    padding: var(--gap);
+}
+
+/* Další možnost - maskování čar pomocí gradientu na okrajích */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse at center, transparent 70%, rgba(255, 255, 255, 0.6) 90%);
+}
+
+body.dark::after {
+    background: radial-gradient(ellipse at center, transparent 70%, rgba(29, 30, 32, 0.6) 90%);
 }
