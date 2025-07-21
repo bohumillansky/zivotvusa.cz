@@ -31,16 +31,42 @@ article {
     border-radius: var(--radius);
 }
 
-/* Box-shadow POUZE pro detail článku (post-single) */
+/* Box-shadow s postupným přechodem pro detail článku */
 article.post-single {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255),
-        0 0 0 21px rgba(255, 255, 255, 0.5);
+    position: relative;
+    background-color: rgba(255, 255, 255);
+    /* Mírně zvětšíme vnitřní prostor */
+    padding: 20px;
+    /* Kompenzace paddingu negativním marginem */
+    margin-left: -20px;
+    margin-right: -20px;
+    /* Kombinace vnitřních a vnějších stínů */
+    box-shadow:
+        /* Velmi jemný vnitřní přechod */
+        inset 0 0 50px -20px rgba(255, 255, 255, 0.8),
+        inset 0 0 100px -30px rgba(255, 255, 255, 0.6),
+        inset 0 0 150px -40px rgba(255, 255, 255, 0.4),
+        /* Vnější stíny */
+        0 0 30px 5px rgba(255, 255, 255, 0.9),
+        0 0 60px 15px rgba(255, 255, 255, 0.7),
+        0 0 90px 25px rgba(255, 255, 255, 0.5);
 }
 
 body.dark article.post-single {
     background-color: rgba(29, 30, 32);
-    box-shadow: 0 0 0 20px rgba(29, 30, 32),
-        0 0 0 21px rgba(29, 30, 32, 0.5);
+    padding: 20px;
+    /* Kompenzace paddingu negativním marginem */
+    margin-left: -20px;
+    margin-right: -20px;
+    box-shadow:
+        /* Velmi jemný vnitřní přechod */
+        inset 0 0 50px -20px rgba(29, 30, 32, 0.8),
+        inset 0 0 100px -30px rgba(29, 30, 32, 0.6),
+        inset 0 0 150px -40px rgba(29, 30, 32, 0.4),
+        /* Vnější stíny */
+        0 0 30px 5px rgba(29, 30, 32, 0.9),
+        0 0 60px 15px rgba(29, 30, 32, 0.7),
+        0 0 90px 25px rgba(29, 30, 32, 0.5);
 }
 
 /* Pro náhledy článků na hlavní stránce - pouze barvy pozadí */
@@ -59,19 +85,4 @@ main {
     padding: var(--gap);
 }
 
-/* Další možnost - maskování čar pomocí gradientu na okrajích */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(ellipse at center, transparent 70%, rgba(255, 255, 255, 0.6) 90%);
-}
-
-body.dark::after {
-    background: radial-gradient(ellipse at center, transparent 70%, rgba(29, 30, 32, 0.6) 90%);
-}
+/* Odstraňujeme předchozí pokusy o gradient */
