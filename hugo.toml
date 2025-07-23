@@ -15,6 +15,7 @@ theme = 'PaperMod'
   # Zobrazování článků (Regular Mode je výchozí)
   ShowReadingTime = true
   ShowShareButtons = true
+  ShareButtons = ["facebook", "twitter", "linkedin"]
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
@@ -23,6 +24,26 @@ theme = 'PaperMod'
   ShowRssButtonInSectionTermList = true
   
   disableSpecial1stPost = true
+
+[params.homeInfoParams]
+  Title = "Hi there wave"
+  Content = "Can be Info, links, about..."
+
+# Social Icons - only the ones you want enabled
+[[params.socialIcons]]
+  name = "facebook"
+  url = "https://facebook.com/yourusername"
+[[params.socialIcons]]
+  name = "instagram"
+  url = "https://instagram.com/yourusername"
+
+[[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/yourusername"
+
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://linkedin.com/in/yourusername"
 
 [params.label]
   text = "Život v USA"
