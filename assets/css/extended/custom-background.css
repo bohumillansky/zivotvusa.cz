@@ -60,10 +60,12 @@ article {
 /* Box-shadow s postupným přechodem pro detail článku */
 article.post-single {
     position: relative;
-    background-color: rgba(255, 255, 255);
+    /* Použijeme čistě bílé pozadí bez rgba */
+    background-color: #ffffff;
     padding: 20px;
     margin-left: -20px;
     margin-right: -20px;
+    /* Obnovené původní stíny pro gradient efekt */
     box-shadow:
         inset 0 0 50px -20px rgba(255, 255, 255, 0.8),
         inset 0 0 100px -30px rgba(255, 255, 255, 0.6),
@@ -87,13 +89,24 @@ body.dark article.post-single {
         0 0 90px 25px rgba(29, 30, 32, 0.5);
 }
 
-/* Pro náhledy článků na hlavní stránce */
+/* Pro náhledy článků na hlavní stránce - sjednocené pozadí */
 article.post-entry {
-    background-color: rgba(255, 255, 255);
+    background-color: #ffffff !important;
 }
 
 body.dark article.post-entry {
-    background-color: rgba(40, 42, 46);
+    background-color: rgba(40, 42, 46) !important;
+}
+
+/* Dodatečné přepsání PaperMod CSS proměnných pro konzistenci */
+:root {
+    --entry: #ffffff;
+    --theme: #ffffff;
+}
+
+[data-theme="dark"] {
+    --entry: rgba(40, 42, 46);
+    --theme: rgba(29, 30, 32);
 }
 
 /* Zachování původního paddingu pro main */
@@ -110,14 +123,13 @@ main {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-/* Jemné zvýraznění social ikon v homeInfo */
+/* Jemné zvýraznění social ikon v homeInfo - transparentní pozadí */
 .home-info .social-icons a {
-    backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    border: none;
 }
 
 body.dark .home-info .social-icons a {
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border: none;
 }

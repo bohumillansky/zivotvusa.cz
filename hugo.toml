@@ -26,8 +26,13 @@ theme = 'PaperMod'
   disableSpecial1stPost = true
 
 [params.homeInfoParams]
-  Title = "Hi there wave"
-  Content = "Can be Info, links, about..."
+  Content = """
+  Bude to 7 let, co jsme se s rodinou přestěhovali z Česka do Spojených států. Na blogu zivotvusa.cz sdílím
+  osobní zkušenosti s životem v USA – co nás překvapilo, co nám chybí z domova a co nás naopak nadchlo.
+
+  Porovnávám každodenní život, peníze, zvyky i mentalitu – bez přikrášlování, ale s nadhledem.
+  Chci ukázat, co může být v USA inspirací, a zároveň připomenout, co je v Česku často lepší, než si sami uvědomujeme.
+  """
 
 # Social Icons - only the ones you want enabled
 [[params.socialIcons]]
