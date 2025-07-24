@@ -1,0 +1,89 @@
+# Základní navigace
+- id: prev_page
+  translation: "Předchozí"
+
+- id: next_page
+  translation: "Další"
+
+- id: wordCount
+  translation: "{{ .Count }} slov"
+
+- id: tags
+  translation: "Tagy"
+
+- id: categories
+  translation: "Kategorie"
+
+- id: series
+  translation: "Série"
+
+- id: search_placeholder
+  translation: "Hledat..."
+
+- id: search_results
+  translation: "Výsledky vyhledávání"
+
+# Datum a čas
+- id: january
+  translation: "ledna"
+
+- id: february
+  translation: "února"
+
+- id: march
+  translation: "března"
+
+- id: april
+  translation: "dubna"
+
+- id: may
+  translation: "května"
+
+- id: june
+  translation: "června"
+
+- id: july
+  translation: "července"
+
+- id: august
+  translation: "srpna"
+
+- id: september
+  translation: "září"
+
+- id: october
+  translation: "října"
+
+- id: november
+  translation: "listopadu"
+
+- id: december
+  translation: "prosince"
+
+# Ostatní texty
+- id: edit_post
+  translation: "Upravit příspěvek"
+
+- id: share
+  translation: "Sdílet"
+
+- id: back_to_top
+  translation: "Zpět nahoru"
+
+- id: toc
+  translation: "Obsah"
+
+- id: recent_posts
+  translation: "Nedávné příspěvky"
+
+- id: tag
+  translation: "tag"
+
+- id: Tags
+  translation: "Tagy"
+
+- id: category
+  translation: "kategorie"
+
+- id: Categories
+  translation: "Kategorie"

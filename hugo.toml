@@ -11,6 +11,7 @@ theme = 'PaperMod'
   description = 'Osobní blog o životě v USA očima českého expata. Finanční srovnání, práce, bydlení a každodenní život v Americe vs Česko. Dlouhodobé zkušenosti z první ruky.'
   keywords = ['život v usa', 'český expat', 'amerika vs česko', 'práce v usa', 'finance usa']
   author = ''
+  DateFormat = "2. January 2006"
 
   # Zobrazování článků (Regular Mode je výchozí)
   ShowReadingTime = true
@@ -91,3 +92,8 @@ theme = 'PaperMod'
   name = "Hledat"
   url = "/search/"
   weight = 40
+
+[languages]
+  [languages.cs]
+    languageName = "Čeština"
+    weight = 1
