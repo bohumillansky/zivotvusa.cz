@@ -1,0 +1,42 @@
+# staticman.yml
+comments:
+  # (*) REQUIRED
+  # Names of the fields the form is allowed to submit
+  allowedFields: ["name", "email", "url", "message"]
+
+  # (*) REQUIRED  
+  # Name of the branch being used
+  branch: "main"
+
+  commitMessage: "New comment by {fields.name}"
+
+  # (*) REQUIRED
+  # Destination path (filename) for the data files
+  filename: "comment-{@timestamp}"
+
+  # Format of the generated data files
+  format: "yaml"
+
+  # List of fields to be populated automatically by Staticman
+  generatedFields:
+    date:
+      type: "date"
+      options:
+        format: "iso8601"
+
+  # Whether entries need to be approved before they are published
+  moderation: true
+
+  # Name of the site
+  name: "Život v USA"
+
+  # (*) REQUIRED
+  # Destination path (directory) for the data files
+  path: "data/comments/{options.slug}"
+
+  # Names of required fields
+  requiredFields: ["name", "message"]
+
+  # List of transformations to apply to any of the fields supplied
+  transforms:
+    email: md5
