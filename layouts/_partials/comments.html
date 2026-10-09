@@ -16,7 +16,7 @@
   <p>Zatím žádné komentáře. Můžete napsat první.</p>
   {{- end }}
   <h3>Napsat komentář</h3>
-  <p>Komentář se zobrazí po schválení. Jméno a text budou veřejné také v GitHub pull requestu. E-mail ani IP adresu do komentářů neukládáme.</p>
+  <p>Komentář se zobrazí po schválení.</p>
   {{- if and site.Params.commentServiceURL site.Params.turnstileSiteKey }}
   <noscript><p>Pro odeslání komentáře zapněte JavaScript. Čtení komentářů funguje i bez něj.</p></noscript>
   <form class="comment-form" data-comment-form data-article-id="{{ $id }}" data-endpoint="{{ site.Params.commentServiceURL }}" data-sitekey="{{ site.Params.turnstileSiteKey }}">
