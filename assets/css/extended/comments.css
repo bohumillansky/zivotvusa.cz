@@ -1,0 +1,15 @@
+.blog-comments { margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+.blog-comments h2, .blog-comments h3 { margin: 1rem 0; }
+.blog-comments p { margin: .75rem 0; }
+.comment-list { list-style: none; padding: 0; }
+.blog-comment { padding: .8rem 0; border-bottom: 1px solid var(--border); }
+.comment-meta, .comment-help { color: var(--secondary); font-size: .9rem; }
+.comment-message { white-space: pre-wrap; overflow-wrap: anywhere; }
+.comment-form { display: grid; gap: .6rem; }
+.comment-form input, .comment-form textarea { width: 100%; padding: .65rem; border: 1px solid var(--border); border-radius: 6px; background: var(--entry); color: var(--primary); font: inherit; }
+.comment-form textarea { resize: vertical; }
+.comment-form button { justify-self: start; padding: .7rem 1rem; border: 1px solid var(--border); border-radius: 6px; background: var(--tertiary); color: var(--primary); font: inherit; cursor: pointer; }
+.comment-form button:disabled { opacity: .55; cursor: default; }
+.comment-form :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.comment-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.comment-status { min-height: 1.5em; }

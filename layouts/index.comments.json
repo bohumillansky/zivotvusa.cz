@@ -1,0 +1,8 @@
+{{- $posts := slice -}}
+{{- range where site.RegularPages "Section" "posts" -}}
+  {{- if .Param "comments" -}}
+    {{- $id := .Params.commentId | default .File.UniqueID -}}
+    {{- $posts = $posts | append (dict "id" $id "title" .Title "url" .Permalink) -}}
+  {{- end -}}
+{{- end -}}
+{{- $posts | jsonify -}}

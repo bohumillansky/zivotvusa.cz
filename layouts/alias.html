@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    {{- if .Page.Site.Params.previewNoIndex }}
+    <meta name="robots" content="noindex, nofollow">
+    {{- end }}
+    <title>{{ .Permalink }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+  </head>
+  <body><a href="{{ .Permalink }}">Pokračovat</a></body>
+</html>

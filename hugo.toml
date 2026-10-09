@@ -1,4 +1,4 @@
-baseURL = 'https://zivotvusa.cz/'
+baseURL = 'https://bohumillansky.github.io/zivotvusa.cz/'
 defaultContentLanguage = 'cs'
 locale = 'cs-CZ'
 title = 'Život v USA - Americké zkušenosti očima Čecha'
@@ -8,6 +8,11 @@ theme = 'PaperMod'
   pagerSize = 5
 
 [params]
+  comments = true
+  previewNoIndex = true
+  # Public values only; the Turnstile secret and GitHub key belong in Worker secrets.
+  commentServiceURL = 'https://zivotvusa-comments.zivotvusa.workers.dev/comments'
+  turnstileSiteKey = '0x4AAAAAAFR6oYI8PlJfZzoR'
   title = 'Život v USA - Americké zkušenosti očima Čecha'
   description = 'Osobní blog o životě v USA očima českého expata. Finanční srovnání, práce, bydlení a každodenní život v Americe vs Česko. Dlouhodobé zkušenosti z první ruky.'
   keywords = ['život v usa', 'český expat', 'amerika vs česko', 'práce v usa', 'finance usa']
@@ -63,7 +68,13 @@ theme = 'PaperMod'
 
 # Výstupy pro vyhledávání
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "COMMENTS"]
+
+[outputFormats.COMMENTS]
+  mediaType = "application/json"
+  baseName = "comment-posts"
+  isPlainText = true
+  notAlternative = true
 
 # Vyhledávání
 [params.fuseOpts]
@@ -103,3 +114,8 @@ theme = 'PaperMod'
 
 [caches.images]
   dir = ':cacheDir/images'
+
+# PaperMod reads this page parameter; cascade covers home, articles and taxonomies.
+[[cascade]]
+  [cascade.params]
+    robotsNoIndex = true

@@ -1,0 +1,39 @@
+{{- if eq .Section "posts" -}}
+{{- $id := .Params.commentId | default .File.UniqueID -}}
+{{- $comments := index (hugo.Data.comments | default dict) $id | default dict -}}
+<section class="blog-comments" id="comments" aria-labelledby="comments-heading">
+  <h2 id="comments-heading">Komentáře</h2>
+  {{- if $comments }}
+  <ol class="comment-list">
+    {{- range sort $comments "createdAt" "asc" }}
+    <li class="blog-comment" id="comment-{{ .id }}">
+      <p class="comment-meta"><strong>{{ .name }}</strong> · <time datetime="{{ .createdAt }}">{{ time.Format ":date_long" .createdAt }}</time></p>
+      <p class="comment-message">{{ .message }}</p>
+    </li>
+    {{- end }}
+  </ol>
+  {{- else }}
+  <p>Zatím žádné komentáře. Můžete napsat první.</p>
+  {{- end }}
+  <h3>Napsat komentář</h3>
+  <p>Komentář se zobrazí po schválení. Jméno a text budou veřejné také v GitHub pull requestu. E-mail ani IP adresu do komentářů neukládáme.</p>
+  {{- if and site.Params.commentServiceURL site.Params.turnstileSiteKey }}
+  <noscript><p>Pro odeslání komentáře zapněte JavaScript. Čtení komentářů funguje i bez něj.</p></noscript>
+  <form class="comment-form" data-comment-form data-article-id="{{ $id }}" data-endpoint="{{ site.Params.commentServiceURL }}" data-sitekey="{{ site.Params.turnstileSiteKey }}">
+    <label for="comment-name">Jméno nebo přezdívka</label>
+    <input id="comment-name" name="name" type="text" required maxlength="60" autocomplete="nickname">
+    <label for="comment-message">Komentář</label>
+    <textarea id="comment-message" name="message" required maxlength="4000" rows="6" aria-describedby="comment-text-help"></textarea>
+    <p id="comment-text-help" class="comment-help">Obyčejný text, bez HTML a Markdownu. Maximálně 4 000 znaků.</p>
+    <div class="comment-honeypot" aria-hidden="true"><label for="comment-website">Webová stránka</label><input id="comment-website" name="website" tabindex="-1" autocomplete="off" type="text"></div>
+    <div data-comment-challenge></div>
+    <button type="submit" disabled>Odeslat ke schválení</button>
+    <p class="comment-status" role="status" aria-live="polite" data-comment-status></p>
+  </form>
+  {{- $script := resources.Get "js/comments.js" | resources.Minify | fingerprint }}
+  <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- else }}
+  <p>Odesílání komentářů připravujeme.</p>
+  {{- end }}
+</section>
+{{- end -}}
