@@ -75,8 +75,8 @@ article.post-single {
         0 0 90px 25px rgba(255, 255, 255, 0.5);
 }
 
-body.dark article.post-single {
-    background-color: rgba(29, 30, 32);
+[data-theme="dark"] article.post-single {
+    background-color: rgb(29, 30, 32);
     padding: 20px;
     margin-left: -20px;
     margin-right: -20px;
@@ -94,8 +94,8 @@ article.post-entry {
     background-color: #ffffff !important;
 }
 
-body.dark article.post-entry {
-    background-color: rgba(40, 42, 46) !important;
+[data-theme="dark"] article.post-entry {
+    background-color: rgb(40, 42, 46) !important;
 }
 
 /* Dodatečné přepsání PaperMod CSS proměnných pro konzistenci */
@@ -105,8 +105,8 @@ body.dark article.post-entry {
 }
 
 [data-theme="dark"] {
-    --entry: rgba(40, 42, 46);
-    --theme: rgba(29, 30, 32);
+    --entry: rgb(40, 42, 46);
+    --theme: rgb(29, 30, 32);
 }
 
 /* Zachování původního paddingu pro main */
@@ -129,7 +129,7 @@ main {
     border: none;
 }
 
-body.dark .home-info .social-icons a {
+[data-theme="dark"] .home-info .social-icons a {
     background: transparent;
     border: none;
 }

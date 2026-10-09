@@ -1,5 +1,6 @@
 baseURL = 'https://zivotvusa.cz/'
-languageCode = 'cs'
+defaultContentLanguage = 'cs'
+locale = 'cs-CZ'
 title = 'Život v USA - Americké zkušenosti očima Čecha'
 theme = 'PaperMod'
 
@@ -11,7 +12,7 @@ theme = 'PaperMod'
   description = 'Osobní blog o životě v USA očima českého expata. Finanční srovnání, práce, bydlení a každodenní život v Americe vs Česko. Dlouhodobé zkušenosti z první ruky.'
   keywords = ['život v usa', 'český expat', 'amerika vs česko', 'práce v usa', 'finance usa']
   author = ''
-  DateFormat = "2. January 2006"
+  DateFormat = ":date_long"
 
   # Zobrazování článků (Regular Mode je výchozí)
   ShowReadingTime = true
@@ -71,6 +72,7 @@ theme = 'PaperMod'
   location = 0
   distance = 1000
   threshold = 0.4
+  keys = ["title", "permalink", "summary", "content"]
 
 # Menu
 [[menu.main]]   
@@ -95,5 +97,9 @@ theme = 'PaperMod'
 
 [languages]
   [languages.cs]
-    languageName = "Čeština"
+    label = "Čeština"
+    locale = "cs-CZ"
     weight = 1
+
+[caches.images]
+  dir = ':cacheDir/images'
