@@ -6,6 +6,7 @@
   const name = form.elements.namedItem('name');
   const message = form.elements.namedItem('message');
   let widget;
+  let widgetTheme;
   let token = '';
   let sending = false;
   let submission;
@@ -52,13 +53,25 @@
     }
   });
 
-  window.zivotvusaCommentsReady = () => {
+  const renderChallenge = () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    if (widget !== undefined && widgetTheme === theme) return;
+    token = '';
+    updateButton();
+    if (widget !== undefined) window.turnstile.remove(widget);
+    widgetTheme = theme;
     widget = window.turnstile.render(form.querySelector('[data-comment-challenge]'), {
       sitekey: form.dataset.sitekey, action: 'comment', cData: form.dataset.articleId,
-      language: 'cs', theme: 'auto', size: 'flexible',
+      language: 'cs', theme, size: 'flexible',
       callback: value => { token = value; updateButton(); },
       'expired-callback': () => { token = ''; updateButton(); },
       'error-callback': () => { token = ''; updateButton(); status.textContent = 'Ověření se nepodařilo načíst. Zkuste obnovit stránku.'; },
+    });
+  };
+  window.zivotvusaCommentsReady = () => {
+    renderChallenge();
+    new MutationObserver(renderChallenge).observe(document.documentElement, {
+      attributes: true, attributeFilter: ['data-theme'],
     });
   };
   const script = document.createElement('script');
