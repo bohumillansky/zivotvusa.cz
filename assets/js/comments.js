@@ -5,8 +5,10 @@
   const button = form.querySelector('button[type="submit"]');
   const name = form.elements.namedItem('name');
   const message = form.elements.namedItem('message');
+  const challenge = form.querySelector('[data-comment-challenge]');
   let widget;
   let widgetTheme;
+  let widgetSize;
   let token = '';
   let sending = false;
   let submission;
@@ -55,14 +57,17 @@
 
   const renderChallenge = () => {
     const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
-    if (widget !== undefined && widgetTheme === theme) return;
+    // The flexible widget requires 300px; use the compact layout on narrow forms.
+    const size = challenge.clientWidth < 300 ? 'compact' : 'flexible';
+    if (widget !== undefined && widgetTheme === theme && widgetSize === size) return;
     token = '';
     updateButton();
     if (widget !== undefined) window.turnstile.remove(widget);
     widgetTheme = theme;
-    widget = window.turnstile.render(form.querySelector('[data-comment-challenge]'), {
+    widgetSize = size;
+    widget = window.turnstile.render(challenge, {
       sitekey: form.dataset.sitekey, action: 'comment', cData: form.dataset.articleId,
-      language: 'cs', theme, size: 'flexible',
+      language: 'cs', theme, size,
       callback: value => { token = value; updateButton(); },
       'expired-callback': () => { token = ''; updateButton(); },
       'error-callback': () => { token = ''; updateButton(); status.textContent = 'Ověření se nepodařilo načíst. Zkuste obnovit stránku.'; },
@@ -73,6 +78,7 @@
     new MutationObserver(renderChallenge).observe(document.documentElement, {
       attributes: true, attributeFilter: ['data-theme'],
     });
+    new ResizeObserver(renderChallenge).observe(challenge);
   };
   const script = document.createElement('script');
   script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=zivotvusaCommentsReady&render=explicit';

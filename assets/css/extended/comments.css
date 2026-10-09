@@ -1,15 +1,100 @@
-.blog-comments { margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
-.blog-comments h2, .blog-comments h3 { margin: 1rem 0; }
-.blog-comments p { margin: .75rem 0; }
-.comment-list { list-style: none; padding: 0; }
-.blog-comment { padding: .8rem 0; border-bottom: 1px solid var(--border); }
-.comment-meta, .comment-help { color: var(--secondary); font-size: .9rem; }
-.comment-message { white-space: pre-wrap; overflow-wrap: anywhere; }
-.comment-form { display: grid; gap: .6rem; }
-.comment-form input, .comment-form textarea { width: 100%; padding: .65rem; border: 1px solid var(--border); border-radius: 6px; background: var(--entry); color: var(--primary); font: inherit; }
-.comment-form textarea { resize: vertical; }
-.comment-form button { justify-self: start; padding: .7rem 1rem; border: 1px solid var(--border); border-radius: 6px; background: var(--tertiary); color: var(--primary); font: inherit; cursor: pointer; }
-.comment-form button:disabled { opacity: .55; cursor: default; }
+.blog-comments {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 16px;
+  line-height: 1.65;
+  scroll-margin-top: 24px;
+}
+
+.blog-comments h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 650;
+}
+
+.comment-count {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.comment-list { list-style: none; margin: 0 0 24px; padding: 0; }
+.blog-comment { padding: 18px 0; border-bottom: 1px solid var(--border); }
+.blog-comment:first-child { padding-top: 0; }
+.blog-comment:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.comment-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 0 0 6px;
+}
+
+.comment-meta strong { font-size: 15px; font-weight: 600; }
+.comment-meta time { color: var(--secondary); font-size: 12px; }
+.comment-message { margin: 0; color: var(--content); font-size: 15px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.comment-empty { margin: 0 0 22px; color: var(--secondary); font-size: 14px; }
+
+.comment-compose {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+}
+
+.blog-comments h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
+.comment-notice { margin: 0 0 20px; color: var(--secondary); font-size: 13px; }
+.comment-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; min-width: 0; }
+.comment-field { display: grid; gap: 6px; min-width: 0; }
+.comment-field label { font-size: 14px; font-weight: 500; }
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  border-radius: 8px;
+  background: var(--theme);
+  color: var(--primary);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.comment-form input { min-height: 44px; }
+.comment-form textarea { min-height: 120px; resize: vertical; }
+.comment-help { margin: 0; color: var(--secondary); font-size: 12px; }
+
+.comment-form button {
+  justify-self: start;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--theme);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comment-form button:hover:not(:disabled) { opacity: .85; }
+.comment-form button:disabled { opacity: .45; cursor: default; }
 .comment-form :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
 .comment-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-.comment-status { min-height: 1.5em; }
+.comment-status { margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+
+@media (max-width: 480px) {
+  .comment-compose { padding: 12px; }
+  .comment-form button { justify-self: stretch; }
+}
