@@ -32,6 +32,24 @@ zdrojového článku zachovej staré ID ve front matter `commentId`.
 Publikovaný `comment-posts.json` obsahuje pouze povolené články, bez draftů.
 Starý `staticman.yml` není součástí tohoto procesu.
 
+## Článek s fotografiemi
+
+Hotový příklad je v `content/posts/ukazka-fotografie/`: článek `index.md` a dvě
+fotografie uložené vedle něj. V záhlaví front matter `cover.image` vybere
+titulní fotografii; `cover.alt` a `cover.caption` nastaví její popis a popisek.
+PaperMod při produkčním sestavení vytváří menší varianty titulního snímku.
+
+Obyčejný obrázek do textu vložíš Markdownem:
+
+```markdown
+![Popis fotografie](moje-fotografie.jpg)
+```
+
+Pro fotografii s popiskem a odkazem na větší verzi použij příklad `figure` v
+ukázkovém článku. Nové články zakládej jako složku s `index.md` a obrázky.
+Používej webové kopie; plné originály mohou zůstat v pCloud. Ukázkový text
+i obrázky jsou ilustrační, zdroje snímků jsou uvedené přímo v článku.
+
 Při veřejném spuštění změň `baseURL`, připoj vlastní Pages doménu/DNS a odeber
 preview nastavení `previewNoIndex` i cascade `robotsNoIndex`. Současně aktualizuj
 `BLOG_BASE_URL` Workeru a hostname Turnstile.
