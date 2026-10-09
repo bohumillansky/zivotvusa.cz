@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "3048ba81-6ef6-4b28-ae5d-5514d9d88993",
+  "articleId": "583bc6c089052d23ac6c3a855c17f6df",
+  "name": "Test nasazení",
+  "message": "Testovací komentář pro ověření odeslání přes Cloudflare a schvalování v GitHub pull requestu. Tento komentář lze odmítnout.",
+  "createdAt": "2026-10-09T04:08:47.240Z"
+}
