@@ -1,0 +1,72 @@
+.home-brand {
+    position: relative;
+    margin: 12px 0 20px;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.home-brand picture,
+.home-brand img {
+    display: block;
+    width: 100%;
+}
+
+.home-brand img {
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+/* The desktop illustration already contains the title. Keep its HTML
+   equivalent available to screen readers, and visible on mobile. */
+.home-brand-copy {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.home-info {
+    min-height: 0;
+    margin: 0 0 28px;
+    padding: 0;
+}
+
+.home-info .entry-footer {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .home-brand img {
+        height: 140px;
+        object-fit: cover;
+        object-position: center 42%;
+    }
+
+    .home-brand-copy {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 14px 16px;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+        background: var(--entry);
+    }
+
+    .home-brand-copy h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .home-brand-copy p {
+        margin-top: 5px;
+        color: var(--secondary);
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,27 @@
+{{- with site.Params.homeInfoParams }}
+{{- $cover := resources.Get "social/facebook/cover.png" }}
+{{- $wide := $cover.Resize "1440x webp q85" }}
+{{- $small := $cover.Resize "720x webp q85" }}
+{{- $mountains := ($cover.Crop "900x774 left").Resize "720x webp q85" }}
+<section class="home-brand" aria-labelledby="home-brand-title">
+    <picture>
+        <source media="(max-width: 600px)" srcset="{{ $mountains.RelPermalink }}">
+        <img src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} 720w, {{ $wide.RelPermalink }} 1440w"
+            sizes="(max-width: 768px) calc(100vw - 48px), 720px"
+            width="{{ $small.Width }}" height="{{ $small.Height }}" alt="" fetchpriority="high">
+    </picture>
+    <div class="home-brand-copy">
+        <h1 id="home-brand-title">Život v USA</h1>
+        <p>Americké zkušenosti očima Čecha</p>
+    </div>
+</section>
+<article class="first-entry home-info">
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}

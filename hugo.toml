@@ -61,6 +61,13 @@ theme = 'PaperMod'
 [params.label]
   text = "Život v USA"
 
+[params.assets]
+  favicon = 'icons/favicon-32.png'
+  favicon16x16 = 'icons/favicon-16.png'
+  favicon32x32 = 'icons/favicon-32.png'
+  apple_touch_icon = 'icons/favicon-180.png'
+  theme_color = '#0b2c48'
+
 [params.ads]
   home = true
   post = true

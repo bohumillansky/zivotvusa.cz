@@ -1,0 +1,6 @@
+{{- /* Publish icons from the shared Facebook avatar at build time. */ -}}
+{{- $avatar := resources.Get "social/facebook/profile.png" -}}
+{{- range slice 16 32 180 -}}
+    {{- $icon := ($avatar.Resize (printf "%dx%d png" . .)) | resources.Copy (printf "icons/favicon-%d.png" .) -}}
+    {{- $publishedURL := $icon.RelPermalink -}}
+{{- end -}}
