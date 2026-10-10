@@ -14,11 +14,11 @@ Používej **Hugo Extended 0.167.0**, stejnou verzi jako GitHub Actions.
 Instalační balíčky jsou v [oficiálním vydání Huga](https://github.com/gohugoio/hugo/releases/tag/v0.167.0).
 Pro tento projekt není potřeba Node.js, npm ani Dart Sass.
 
-## Náhled a komentáře
+## Web a komentáře
 
-Web zatím běží na https://bohumillansky.github.io/zivotvusa.cz/ s `noindex,
-nofollow`. Nemá heslo: kdo zná URL, může jej otevřít. Repozitář a komentářové
-pull requesty jsou veřejné. `zivotvusa.cz` zatím nepřipojuj jako Pages doménu.
+Veřejný web je na https://zivotvusa.cz/ a povoluje indexování vyhledávači.
+GitHub Pages zajišťuje hosting; Cloudflare spravuje DNS na bezplatném plánu.
+Repozitář a komentářové pull requesty jsou veřejné.
 
 Komentáře jsou obyčejný text sestavovaný do HTML z
 `data/comments/<article-id>/<uuid>.json`. Návštěvník vyplní jméno a text,
@@ -55,9 +55,10 @@ ukázkovém článku. Nové články zakládej jako složku s `index.md` a obrá
 Používej webové kopie; plné originály mohou zůstat v pCloud. Ukázkový text
 i obrázky jsou ilustrační, zdroje snímků jsou uvedené přímo v článku.
 
-Při veřejném spuštění změň `baseURL`, připoj vlastní Pages doménu/DNS a odeber
-preview nastavení `previewNoIndex` i cascade `robotsNoIndex`. Současně aktualizuj
-`BLOG_BASE_URL` Workeru a hostname Turnstile.
+Pages vlastní doména je `zivotvusa.cz`; DNS pro apex a `www` směřuje na
+GitHub Pages. `BLOG_BASE_URL` Workeru musí být `https://zivotvusa.cz/` a
+Turnstile musí povolovat hostname `zivotvusa.cz`. Hosting, DNS, komentářový
+Worker a Turnstile používají pouze bezplatné služby; placené upgrady nezapínej.
 
 Po naklonování repozitáře stáhni připnutou verzi tématu:
 

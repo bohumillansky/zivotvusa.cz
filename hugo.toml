@@ -1,4 +1,5 @@
-baseURL = 'https://bohumillansky.github.io/zivotvusa.cz/'
+baseURL = 'https://zivotvusa.cz/'
+enableRobotsTXT = true
 defaultContentLanguage = 'cs'
 locale = 'cs-CZ'
 title = 'Život v USA - Americké zkušenosti očima Čecha'
@@ -9,7 +10,6 @@ theme = 'PaperMod'
 
 [params]
   comments = true
-  previewNoIndex = true
   # Public values only; the Turnstile secret and GitHub key belong in Worker secrets.
   commentServiceURL = 'https://zivotvusa-comments.zivotvusa.workers.dev/comments'
   turnstileSiteKey = '0x4AAAAAAFR6oYI8PlJfZzoR'
@@ -115,7 +115,3 @@ theme = 'PaperMod'
 [caches.images]
   dir = ':cacheDir/images'
 
-# PaperMod reads this page parameter; cascade covers home, articles and taxonomies.
-[[cascade]]
-  [cascade.params]
-    robotsNoIndex = true
