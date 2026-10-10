@@ -89,6 +89,10 @@ Vlastní doména a její DNS se nastavují samostatně v GitHub Pages a Cloudfla
 
 ## Údržba
 
+Postup pro ověření domény v Google Search Console, odeslání sitemap a kontrolu
+indexování je v [návodu pro Google Search Console](docs/search-console.md).
+Tyto kroky se dokončují v Google účtu vlastníka; samotný push je neprovede.
+
 PaperMod je Git submodul připnutý na konkrétní commit. Při aktualizaci tématu
 nebo Huga ověř současně produkční build, vyhledávání, kategorie, tagy,
 stránkování a zobrazení na mobilu ve světlém i tmavém režimu.

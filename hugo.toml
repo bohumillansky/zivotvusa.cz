@@ -68,6 +68,12 @@ theme = 'PaperMod'
   apple_touch_icon = 'icons/favicon-180.png'
   theme_color = '#0b2c48'
 
+[params.analytics.google]
+  # Volitelné ověření URL-prefix property v Google Search Console.
+  # Vlož pouze hodnotu content z ověřovacího meta tagu; není to heslo.
+  # Domain property se ověřuje přes DNS v Cloudflare. Postup: docs/search-console.md.
+  SiteVerificationTag = ''
+
 [params.ads]
   home = true
   post = true
