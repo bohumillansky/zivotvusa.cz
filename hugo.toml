@@ -51,8 +51,8 @@ theme = 'PaperMod'
   url = "https://instagram.com/yourusername"
 
 [[params.socialIcons]]
-  name = "twitter"
-  url = "https://twitter.com/yourusername"
+  name = "x"
+  url = "https://x.com/ZivotVUSAcz"
 
 [[params.socialIcons]]
   name = "linkedin"
