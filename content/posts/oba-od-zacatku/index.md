@@ -1,5 +1,5 @@
 ---
-title: "Oba od začátku"
+title: "Oba od začátku: proč jsme si vybrali USA"
 date: 2026-10-09T12:00:00-06:00
 description: "Přes pohovory v Londýně a Praze a výlet do Dublinu až k rozhodnutí zkusit život v Coloradu."
 categories: ["cestovani"]

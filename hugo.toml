@@ -2,7 +2,7 @@ baseURL = 'https://zivotvusa.cz/'
 enableRobotsTXT = true
 defaultContentLanguage = 'cs'
 locale = 'cs-CZ'
-title = 'Život v USA - Americké zkušenosti očima Čecha'
+title = 'Život v USA'
 theme = 'PaperMod'
 
 [pagination]
@@ -13,7 +13,7 @@ theme = 'PaperMod'
   # Public values only; the Turnstile secret and GitHub key belong in Worker secrets.
   commentServiceURL = 'https://zivotvusa-comments.zivotvusa.workers.dev/comments'
   turnstileSiteKey = '0x4AAAAAAFR6oYI8PlJfZzoR'
-  title = 'Život v USA - Americké zkušenosti očima Čecha'
+  title = 'Život v USA'
   description = 'Osobní blog o životě v USA očima českého expata. Finanční srovnání, práce, bydlení a každodenní život v Americe vs Česko. Dlouhodobé zkušenosti z první ruky.'
   keywords = ['život v usa', 'český expat', 'amerika vs česko', 'práce v usa', 'finance usa']
   author = ''
