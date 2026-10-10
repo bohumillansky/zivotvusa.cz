@@ -3,6 +3,11 @@
 Český blog postavený na Hugu a tématu PaperMod. Zdrojové články jsou v
 `content/posts/`; výsledný web publikuje GitHub Pages.
 
+## Psaní článků
+
+Postup od založení článku přes vložení fotografií až po náhled a publikování
+je v návodu [Jak napsat a publikovat článek s fotografiemi](docs/psani-clanku.md).
+
 ## Lokální vývoj
 
 Používej **Hugo Extended 0.167.0**, stejnou verzi jako GitHub Actions.
