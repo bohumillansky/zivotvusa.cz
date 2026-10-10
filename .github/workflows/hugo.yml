@@ -53,7 +53,7 @@ jobs:
 
       - name: Build with Hugo
         env:
-          SITE_BASE_URL: ${{ steps.pages.outputs.base_url || 'https://zivotvusa.cz' }}
+          SITE_BASE_URL: https://zivotvusa.cz
         run: |
           hugo version
           hugo build \
